@@ -880,7 +880,7 @@ while operation != '5':
                 end_time = time.perf_counter()
                 if deleted_id > 0:
                     print(f"{deleted_id} IDs are already deleted. So failed to search those IDs.")
-                print(f"total time: {end_time - start_time:.8f} seconds.")
+                print(f"total time: {end_time - start_time:.6f} seconds.")
                 print(f"mean time: {(end_time - start_time) / num:.8f} seconds.")
             else:
                 print(f"there are only {len(student_info)} students.")
@@ -918,7 +918,7 @@ while operation != '5':
                 end_time = time.perf_counter()
                 print(f"total time for deletion: {end_time - start_time:.6f} seconds.")
                 if how_many == want_to_delete:
-                    print(f"{how_many} keys are deleted.")
+                    print(f"{how_many} keys are deleted.\nremaining keys: {len(student_info)}")
                 else:
                     print(f"there are only {how_many} keys. Therefore, all keys are deleted.")
             else:

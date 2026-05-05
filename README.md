@@ -4,7 +4,7 @@
 ## This project implement B-tree, B+-tree, B*-tree
 
 ## environment
-* Language: Python
+* Language: Python 3.10.2
 * Dataset: The 'student.csv' file must be located in the same directory to ensure the program runs correctly.
 * Data format: The CSV file data should have this structure: Student ID, Name, Gender, GPA, Height, Weight.
 

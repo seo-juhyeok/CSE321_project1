@@ -181,7 +181,7 @@ class Btree:
         pointer, delete_node = self.where_to_delete(self.root, deleting_key, path, index_list)
         if pointer == None:
             return None
-        elif delete_node.leaf == False:
+        elif delete_node.leaf == False: # find the successor
             for i in range(len(delete_node.keys)):
                 if delete_node.keys[i] == deleting_key:
                     path.append(delete_node)
@@ -330,7 +330,10 @@ class Bplus_tree:
             location = parent
 
     def satisfy_properties(self, node, path, index_list):
-        min_keys = math.ceil(self.order / 2) - 1
+        if node.leaf == False:
+            min_keys = math.ceil(self.order / 2) - 1
+        else:
+            min_keys = math.ceil((self.order - 1) / 2)
 
         if len(path) == 0: # root node
             if len(node.keys) == 0:
